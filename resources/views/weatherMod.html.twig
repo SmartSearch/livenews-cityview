@@ -1,0 +1,14 @@
+<p class="subtitle">city info</p>
+<div class="cityinfo-cont">
+  <p><span>Santander</span> {{ date | date('H:i D d/n/Y') }}</p>
+  <ul>
+    <li id="weather">{{temp_current}}º</li>
+    <li id="max-weather">{{temp_max}}º</li>
+    <li id="min-weather">{{temp_min}}º</li>
+  </ul>
+  <ul>
+    <li id="iconWeather"></li>
+    <li id="wind-weather">{{wind}} <span class="small"><!--km/h --></span></li>
+    <li id="wet-weather">{{humedad}} <span class="small"><!-- % --></span></li>
+  </ul>
+</div>

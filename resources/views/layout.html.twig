@@ -1,0 +1,31 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+	<title>SMART - Live news - City view</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
+   <style type="text/css"> </style>
+   
+        <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/styles.css">
+        <script src="{{ app.request.basepath }}/assets/js/scripts.js"></script>
+</head>
+    <body {% if document.id is defined %} id="{{ document.id}}" {% endif %} >
+    {% block content %} {% endblock %}
+    
+</body>
+<!-- Google Universal Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26559449-2', 'prisasd.com');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Universal Analytics - END -->
+</html>

@@ -1,0 +1,91 @@
+{% extends 'layout.html.twig' %}
+{% import _self as fn %}
+{% block content %}
+
+<script type="text/javascript" src="./psdmedia/misc/smart/smart.min.js"></script>
+<iframe id="_twttr_anywhere_client_1_2_0" tabindex="-1" role="presentation"
+style="position:absolute;top:-9999px;"></iframe>
+    <div class="splash">
+    </div>
+<script type="text/javascript">
+var browser = navigator.userAgent;
+      var browserRegex  = /(Android|BlackBerry|IEMobile|Nokia|iP(ad|hone|od)|Opera M(obi|ini))/;
+      var isMobile    = false;
+      if(browser.match(browserRegex)) {
+        isMobile      = true;
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){
+          window.scrollTo(0,1);
+        }
+      };
+var sm = new SMART();
+$(document).ready(init());
+  function init() {    
+     sm.init("container");
+     setTimeout(function(){
+         sm.playPause()
+    },1000);
+  }
+$(document).ready(function () {
+     $("li #iconPlay").click(
+              function (){
+                  sm.playPause()
+              }
+                  );
+      $("li.icon_mod-options #iconRevff").click(function (){
+          sm.reverse()
+      });
+      $("li.icon_mod-options #iconNight").click(function(){
+          sm.toggleProfile()
+      });
+      $(".icon_mod-options #iconCowd").click(function (){
+          sm.togglePeople()
+      });
+});
+
+$(document).ready(function() {
+        var bodyheight = $(document).height();
+        $("#index #wrapper").height(bodyheight);
+                        });
+
+    // for the window resize
+    $(window).resize(function() {
+                var bodyheight = $(document).height();
+                $("#index #wrapper").height(bodyheight);
+    });
+</script>
+<div id="wrapper">
+        <div id="window1">
+         <div id="container"> </div>
+          <div id="barra">
+            <img src="./img/pestana-down.jpg">
+            <div id="cont_barra">
+              <div id="mod_cityinfo">
+              {% include 'weatherMod.html.twig' with mod_wheater %}
+             </div><!--mod_cityinfo-->
+              <div id="mod_options">
+                  <p class="subtitle">options</p>
+                  <ul>
+                    <li class="icon_mod-options"><a id="iconNight"><span></span>night</a></li>
+                    <li class="icon_mod-options"><a id="iconCowd"><span></span>crowd</a></li>
+                    <li class="icon_mod-options active"><a id="iconPlay"><span></span>play</a></li>
+                    <li class="icon_mod-options"><a id="iconRevff"><span></span>rev/ff</a></li>
+                    <li class="icon_mod-options"><p id="iconRevff"><span></span></a></li>
+                    <li class="icon_mod-options-data"><a id="iconData" href="/buscador.html">switch to<br>data view</a></li>
+                  </ul>
+                  <script type="text/javascript">
+                    {{ inicializacionPhenix|default('') }}
+                  </script>
+              </div><!--mod_options-->
+              <div id="mod_news">
+                  {% include 'newsMod.html.twig' with mod_news %}
+              </div><!--mod_news-->
+            </div><!--cont_barra-->
+          </div><!--barra-->
+        </div><!--window1-->
+        <div id="window2">
+        </div><!--window2-->
+      </div><!--fin wrapper-->
+      <footer>
+      </footer>
+{% endblock %}

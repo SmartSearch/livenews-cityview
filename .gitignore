@@ -1,16 +1,10 @@
-# Bootstrap
-app/bootstrap*
-
-# Symfony directories
+# Vagrant directory
+.vagrant
+# Cache directory
+resources/cache/*
+# Log directory
+resources/log/*
+# Vendor directory
 vendor/*
-*/logs/*
-*/cache/*
-web/uploads/*
-web/bundles/*
-
-# Configuration files
-app/config/parameters.ini
-app/config/parameters.yml
-
-# Composer
-composer.phar
+# Web assets
+web/assets/*
